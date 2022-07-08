@@ -3,6 +3,6 @@ from django.contrib import admin
 from django.urls import path
 
 urlpatterns = [
-    path('calendar/init/', RedirectOauthView),
-    path('google_oauth/callback/', CallbackView)
+    path('calendar/init/', GoogleCalendarInitView),
+    path('google_oauth/callback/', GoogleCalendarRedirectView)
 ]
