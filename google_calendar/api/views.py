@@ -6,11 +6,6 @@ import google_apis_oauth
 from googleapiclient.discovery import build
 from django.core.exceptions import ValidationError, PermissionDenied
 
-import google.oauth2.credentials
-import google_auth_oauthlib.flow
-import googleapiclient.discovery
-
-
 
 REDIRECT_URI = 'http://localhost:8000/rest/v1/google_oauth/callback/'
 
@@ -25,7 +20,6 @@ def RedirectOauthView(request):
     oauth_url = google_apis_oauth.get_authorization_url(
         JSON_FILEPATH, SCOPES, REDIRECT_URI)
     return HttpResponseRedirect(oauth_url)
-
 
 
 def CallbackView(request):
