@@ -16,3 +16,7 @@ __pycache__/
 */*/__pycache__/
 
 */__pycache__/
+
+client_id.json
+
+db.sqlite3

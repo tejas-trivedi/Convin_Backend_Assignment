@@ -25,8 +25,10 @@ SECRET_KEY = 'django-insecure-gj1xdb&fm8t%2xls6i9id@y_-0($vnr*5(qo4d!-984%xvkv(u
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
+import os
+os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
 
 # Application definition
 
@@ -37,6 +39,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'rest_framework',
+    'rest_framework.authtoken',
+    "drf_yasg",
+
+    'google_calendar',
 ]
 
 MIDDLEWARE = [
